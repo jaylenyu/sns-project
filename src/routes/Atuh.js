@@ -30,8 +30,8 @@ const submit = async(e) => {
         }
         console.log(data)
         setUserInputValue({
-        email: '',
-        password: ''
+            email: '',
+            password: ''
         });
     } catch(error) {
         console.log(error);

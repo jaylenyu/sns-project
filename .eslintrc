@@ -1,8 +1,5 @@
 {
     "plugins": ["prettier"],
-    "extends": [
-      "prettier",
-      "prettier/@typescript-eslint"
-    ],
+    "extends": ["eslint:recommended", "prettier"],
     "parser": "babel-eslint"
   }
