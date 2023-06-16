@@ -31,8 +31,6 @@ const onSocialLogin = async (e) => {
     console.log(data);
 }
 
-console.log(userInputValue);
-
 const submit = async(e) => {
     try {
         let data
@@ -64,7 +62,6 @@ return (
         <Button onClick={submit}>{newAccount ? "Create Account" : "Login"}</Button>
         <Button onClick={onSocialLogin} name='Google'>Continue with Google</Button>
         <Button onClick={onSocialLogin} name='Github'>Continue with Github</Button>
-        
     </div>
     )
 }
