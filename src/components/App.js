@@ -6,6 +6,7 @@ import { getAuth, onAuthStateChanged } from 'firebase/auth';
 const App = () => {
   const [init, setInit] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(authService.currentUser)
+  const [userInfo, setUserInfo] = useState(null)
   
   setInterval(() => {
     console.log(authService.currentUser);
@@ -14,12 +15,12 @@ const App = () => {
   useEffect(() => {
       const auth = getAuth();
       onAuthStateChanged(auth, (user) => {
-          if (user) setIsLoggedIn(true);
+          if (user) setIsLoggedIn(true); setUserInfo(user);
           if (!user) setIsLoggedIn(false);
       setInit(true);
       });
   }, [])
-  
+  console.log(userInfo)
   return (
     <>
       {init ? <AppRouter isLoggedIn={isLoggedIn} /> : 'Initializing...'}
